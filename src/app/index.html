@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <!-- Vue JS for UI -->
+    <script src="../assets/vue.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
+    <h1 id="heading1">{{title}}</h1>
+    <div class="add-items">
+      <add-item 
+        v-for="resident in residents"
+        v-bind:key="resident.id"
+        v-bind:resident="resident"></add-item>
+    </div>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
